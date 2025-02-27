@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aircraft Avenue</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">Aircraft Avenue</div>
+
+        <div class="menu-bar">
+            <div class="menu-item"><a href="index.html"><u>Home</u></a></div>
+            <div class="menu-item"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfjiBZn4EE1R_hAgNuIb-G2lLrxK8x17iyPAZqSJX-OSYNn8w/viewform?usp=header">List Your Aircraft</a></div>
+            <div class="menu-item"><a href="#">Help</a></div>
+        </div>
+
+        <!-- Toggle Filter Button -->
+        <button class="toggle-filter-button" onclick="toggleFilterSection()">Filters</button>
+
+        <!-- Sort by Price Button -->
+        <button class="sort-price-button" onclick="sortByPrice()">Sort by Price</button>
+
+        <!-- Filter Box -->
+        <div class="filter-box" id="filter-box">
+            <table>
+                <tr>
+                    <td>
+                        <label for="manufacturer-filter">Manufacturer:</label>
+                        <div id="manufacturer-filter">
+                            <label><input type="checkbox" value="cessna"> Cessna</label>
+                            <label><input type="checkbox" value="gulfstream"> Gulfstream</label>
+                            <label><input type="checkbox" value="bombardier"> Bombardier</label>
+                            <label><input type="checkbox" value="dassault"> Dassault</label>
+                            <label><input type="checkbox" value="learjet"> Learjet</label>
+                            <label><input type="checkbox" value="embraer"> Embraer</label>
+                            <label><input type="checkbox" value="hawker"> Hawker</label>
+                            <label><input type="checkbox" value="beechcraft"> Beechcraft</label>
+                            <label><input type="checkbox" value="cirrus"> Cirrus</label>
+                        </div>
+                    </td>
+
+                    <td>
+                        <label for="year-filter">Year Range:</label>
+                        <select id="year-filter">
+                            <option value="">All</option>
+                            <option value="1970-1980">1970-1980</option>
+                            <option value="1981-1990">1981-1990</option>
+                            <option value="1991-2000">1991-2000</option>
+                            <option value="2001-2010">2001-2010</option>
+                            <option value="2011-2020">2011-2020</option>
+                            <option value="2021-2025">2021-2025</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="price-filter">Price Range:</label>
+                        <select id="price-filter">
+                            <option value="">All</option>
+                            <option value="0-500000">$0 - $500,000</option>
+                            <option value="500000-1000000">$500,000 - $1,000,000</option>
+                            <option value="1000000-2000000">$1,000,000 - $2,000,000</option>
+                            <option value="2000000-5000000">$2,000,000 - $5,000,000</option>
+                            <option value="5000000-10000000">$5,000,000 - $10,000,000</option>
+                            <option value="10000000-20000000">$10,000,000 - $20,000,000</option>
+                            <option value="20000000-90000000">More than $20,000,000</option>
+                        </select>
+                    </td>
+
+                    <td>
+                        <label for="location-filter">Location:</label>
+                        <select id="location-filter">
+                            <option value="">All</option>
+                            <option value="europe">Europe</option>
+                            <option value="usa">USA</option>
+                            <option value="canada">Canada</option>
+                            <option value="australia/asia&pacific">Australia / Asia & Pacific</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <!-- Buttons -->
+            <div style="margin-top: 10px; display: flex; gap: 10px;">
+                <button class="apply-filters-button" onclick="applyFilters()">Apply Filters</button>
+                <button class="reset-filters-button" onclick="resetFilters()">Reset</button>
+            </div>
+        </div>
+
+        <!-- Aircraft listings -->
+        <div class="aircraft-listing">
+            <div class="aircraft-item" data-manufacturer="beechcraft" data-year="2010" data-price="2400000" data-condition="used" data-location="usa">
+                <div class="aircraft-name">2010 BEECHCRAFT PREMIER IA</div>
+                <p class="aircraft-price">USD $2,400,000</p>
+                <div class="carousel">
+                    <img src="https://media.sandhills.com/img.axd?id=9040622028&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=WQZB8cFLrUwkefTYPcFWHpFIKEKoHFrd5pYyZ5ljqXc%3d" alt="Cessna 172 Skyhawk 1" class="active">
+                    <img src="https://media.sandhills.com/img.axd?id=9040622006&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=WQZB8cFLrUxICk0KD4lprjbt%2bnuSSCoMJ5v36j%2bvI%2fc%3d" alt="Cessna 172 Skyhawk 2">
+                    <img src="https://media.sandhills.com/img.axd?id=9040621992&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=%2bw%2bdkLu061O6lZiLEGDoLKt3WLCODyZGCIUUJMApNHY%3d" alt="Cessna 172 Skyhawk 3">
+                    <img src="https://media.sandhills.com/img.axd?id=9040622045&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=WQZB8cFLrUwda2TVfA4s6W4gmGC6ICLL0eTpumKWDJY%3d" alt="Cessna 172 Skyhawk 4">
+                    <img src="https://media.sandhills.com/img.axd?id=9040622020&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=WQZB8cFLrUz77rfHo8f%2fy2UuCgT6ziq42TsL7ybc%2fUM%3d" alt="Cessna 172 Skyhawk 5">
+                    <img src="https://media.sandhills.com/img.axd?id=9040621998&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=%2bw%2bdkLu061OS4PcEEZIKT1utu3GO556eV%2f5YO73%2b7H4%3d" alt="Cessna 172 Skyhawk 6">
+                    <img src="https://media.sandhills.com/img.axd?id=9040622017&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=WQZB8cFLrUyj%2fyczwwdp5wZKDLfdlJ8NUy9SXKNHO7s%3d" alt="Cessna 172 Skyhawk 7">
+                    <img src="https://media.sandhills.com/img.axd?id=9040622029&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=WQZB8cFLrUykJ%2fFe4fttmjBgrUM%2fPbR8AtuBPduvpP8%3d" alt="Cessna 172 Skyhawk 8">
+                    <img src="https://media.sandhills.com/img.axd?id=9040622293&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=ZSVR4g2KPLNj2M39eHevDBSvJkgl4FA2JJs05vSCVzk%3d" alt="Cessna 172 Skyhawk 9">
+                    <img src="https://media.sandhills.com/img.axd?id=9040622554&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=fVgo%2f%2boQGay7E19J9voM2dvunylzH0vPixA%2fha7nFKA%3d" alt="Cessna 172 Skyhawk 10">
+                    <img src="https://media.sandhills.com/img.axd?id=9040622757&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=VzBjshdVPWwN1jKUSfFDgq3HdZDFmC2NC6VyQKmgFn0%3d" alt="Cessna 172 Skyhawk 11">
+                    <img src="https://media.sandhills.com/img.axd?id=9040622774&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=VzBjshdVPWz2a4alKBzddQVLDdjFJYunsRpiVxygXcw%3d" alt="Cessna 172 Skyhawk 12">
+                    <img src="https://media.sandhills.com/img.axd?id=9040622780&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=VzBjshdVPWzOeOpYergQbiNFn5PqUQkfK7iBMdCjEK8%3d" alt="Cessna 172 Skyhawk 13">
+                    <button class="carousel-nav prev">&#10094;</button>
+                    <button class="carousel-nav next">&#10095;</button>
+                </div>
+                <div class="aircraft-details">
+                    <p><b> Manufacturer:</b>  BEECHCRAFT</p>
+                    <p><b> Year:</b> 2010</p>
+                    <p><b> Model:</b> PREMIER IA</p>
+                    <p><b> Serial Number:</b> RB-277</p>
+                    <p><b> Registration:</b> N99MN</p>
+                    <p><b> Aircraft Location:</b> Winston-Salem, North Carolina</p>
+                </div>
+                <button class="retro-button" onclick="toggleDetails('cessna-172-details')">More Details</button>
+                <button class="retro-button" onclick="window.location.href='mailto:seller1@example.com?subject=Inquiry%20about%202010%20BEECHCRAFT%20PREMIER%20IA'">Contact Seller</button>
+                <div id="cessna-172-details" class="additional-details">
+                    <p><b> Description:</b> Recent Windshields, A & B Inspections by Textron Service Center GSO January 2025, TAP Elite, Electronic Charts, XM Weather and much more.  Call today to find out more about this excellent Premier IA.</p>
+                    <p><b>Total Time:</b> 3,345</p>
+                    <p><b>Total Landings:</b> 3,680</p>
+                    <p><b>Engines:</b> WILLIAMS FJ44-2A</p>
+                    <p><b>Engines TBO:</b> 5,000</p>
+                    <p><b>Engine 1 Time (SNEW):</b> 3,345</p>
+                    <p><b>Engine 2 Time (SNEW):</b> 3,345</p>
+                    <p><b>Engine 1 Cycles (SNEW):</b> 3,680</p>
+                    <p><b>Engine 2 Cycles (SNEW):</b> 3,680</p>
+                    <p><b>Avionics/Radios:</b> <ul><li>ADF: Collins NAV-4000
+AHRS: Dual Collins AHC-3000</li>
+<li>Autopilot: Dual Collins FGC-3000 IFCS</li>
+<li>Avionics Package: Collins Pro Line 21</li>
+<li>Charts: Electronic Chartview</li>
+<li>Communication Radios: Dual Collins VHF-4000 w/ 8.33 spacing</li>
+<li>CVR: L3 FA2100 CVR</li>
+<li>DME: Collins DME-4000</li>
+<li>DBU: DBU-3000</li>
+<li>EFIS: Collins Three Tube EFIS</li>
+<li>EGPWS: EGPWS</li>
+<li>ELT: ELT</li>
+<li>Flight Director: Dual Collins FGC-3000 IFCS</li>
+<li>FMS: Collins FMC-3000 FMS</li>
+<li>GPS: Collins GPS-4000A</li>
+<li>IFIS: Collins FSU-5010 File Server (Charts and XM Weather)</li>
+<li>Navigation Radios: Dual Collins NAV-4000 / 4500 NAVS</li>
+<li>Radar Altimeter: Collins ALT-4000</li>
+<li>Standby Comm: Collins CTL-23 NAV / COM</li>
+<li>TCAS: Collins TTR-4000</li>
+<li>Transponder: Dual Garmin GTX-3000 Mode S (ADS-B Out)</li>
+<li>Garmin Flight Stream 110</li>
+<li>Garmin GDL-88 Receiver</li>
+<li>Weather Radar: Collins RTA-800 Color Radar</li></ul></p>
+
+                    <p><b>Additional Equipment
+:</b> <ul><li>
+77 Cu. Ft. Oxygen System</li>
+<li>Fire Extinguisher</li>
+<li>Cockpit Flashlight</li>
+<li>Cabin Temp Controller in Cabin</li>
+<li>DeVore Landing & Taxi Lights</li>
+<li>Windshields replaced March 2022 at 2,841 hours</li>
+<li>Copilot Side Window Replaced October 2022 at 3,001 hours</li>
+<li>Two 115VAC Outlets</li>
+<li>Coffee / Water Containers</li>
+<li>Crew Oxygen Mask</li>
+<li>Smoke Goggles</li>
+<li>First Aid Kit</li></ul></p>
+
+                   <p><b>Exterior - Year Painted:</b> 2010</p>
+                   <p><b>Interior - Year Interior:</b> 2010</p>
+                   <p><b>Interior Notes:</b> Six Passenger seats configured in a forward four-place club arrangement with two executive tables two aft forward facing seats with two executive tables and a non-belted lav. Forward right-hand galley.</p>
+                   <p><b>Inspection Status:</b> A & B Inspection January 2025</p>
+                </div>
+            </div>
+            <!-- Add more aircraft items as needed -->
+            <div class="aircraft-item" data-manufacturer="cessna" data-year="2001" data-price="2495000" data-condition="used" data-location="usa">
+                <div class="aircraft-name">2001 CESSNA CITATION BRAVO</div>
+                <p class="aircraft-price">USD $2,495,000</p>
+                <div class="carousel">
+                    <img src="https://media.sandhills.com/img.axd?id=9041610605&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=mJpV%2fzp0ac5Nanvtiiw1KF0Nc4mSbTi3NVqcHNvwdv4%3d" alt="Cessna 172 Skyhawk 1" class="active">
+                    <img src="https://media.sandhills.com/img.axd?id=9041610538&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=%2bq4NxUmucFXFfFUPoofIKR5nY1nG7%2bcP03XMvwG%2bi%2bs%3d" alt="Cessna 172 Skyhawk 2">
+                    <img src="https://media.sandhills.com/img.axd?id=9041610545&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=%2bq4NxUmucFWktE%2fHY4egEvBNSS3o%2fR1V0ABZeVzp7cI%3d" alt="Cessna 172 Skyhawk 3">
+                    <img src="https://media.sandhills.com/img.axd?id=9041610565&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=%2bq4NxUmucFWroHlMSCODe7w7MHP56w6gL9%2f3Rs4gWFk%3d" alt="Cessna 172 Skyhawk 4">
+                    <img src="https://media.sandhills.com/img.axd?id=9041610638&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=mJpV%2fzp0ac7Ne09sxDMHVPzKClYBDlr4CajvmrmtQkk%3d" alt="Cessna 172 Skyhawk 5">
+                    <img src="https://media.sandhills.com/img.axd?id=9041610655&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=mJpV%2fzp0ac6Rt%2fCBGJYesEJik2O%2fwQxbfQn2RbV%2fLXY%3d" alt="Cessna 172 Skyhawk 6">
+                    <button class="carousel-nav prev">&#10094;</button>
+                    <button class="carousel-nav next">&#10095;</button>
+                </div>
+                <div class="aircraft-details">
+                    <p><b> Manufacturer:</b>  CESSNA</p>
+                    <p><b> Year:</b> 2001</p>
+                    <p><b> Model:</b> CITATION BRAVO</p>
+                    <p><b> Serial Number:</b> 550-0953</p>
+                    <p><b> Registration:</b> VH-CCJ</p>
+                    <p><b> Aircraft Location:</b> Austin, Texas</p>
+                </div>
+                <button class="retro-button" onclick="toggleDetails('cessna-173-details')">More Details</button>
+                <button class="retro-button" onclick="window.location.href='mailto:seller2@example.com?subject=Inquiry%20about%202001%20CESSNA%20CITATION%20BRAVO'">Contact Seller</button>
+                <div id="cessna-173-details" class="additional-details">
+                    <p><b> Description:</b> This aircraft is the personal transportation for the man who owned Aeromil Pacific which for years was the Cessna Citation Service Center for Australia.  He takes exceptional pride in this low time aircraft and has maintained and operated it in absolutely pristine condition.  It is only offered for sale because his current requirements now demand an aircraft with different operating parameters.  The aircraft is currently undergoing a Phase 5 inspection and could be delivered on the US Registry should the new owner desire that.  The current owner has been a personal friend for over forty years and I can vouch for the fact that absolutely everything Steve Padgett owns or operates is absolutely first class.</p>
+                    <p><b>Total Time:</b> 3,303</p>
+                    <p><b>Total Landings:</b> 2,701</p>
+                    <p><b>Engines:</b> PRATT & WHITNEY PW530A</p>
+                    <p><b>Engines TBO:</b> 4,000</p>
+                    <p><b>Engine 1 Time (SNEW):</b> 3,303</p>
+                    <p><b>Engine 2 Time (SNEW):</b> 3,303</p>
+                    <p><b>Engine 1 Cycles (SNEW):</b> 2,701</p>
+                    <p><b>Engine 2 Cycles (SNEW):</b> 2,701</p>
+                    <p><b>Avionics/Radios:</b> <ul><li>EFIS: Honeywell Primus 1000</li>
+<li>Garmin GTN 750xi Dual WAAS/GPS/NAV/COM</li>
+<li>Transponders: Dual Garmin GTX 33 Mode S</li>
+<li>DME: Dual Honeywell</li>
+<li>EGPWS: Honeywell Mk VII </li>
+<li>RAD ALT: Collins Alt-55B</li>
+<li>TCAS I: Honeywell </li>
+<li>HF: Honeywell KHF-950</li>
+<li>CVR: L3 A200S</li>
+<li>FDR: provision for FDR</li>
+<li>ELT: Artex C406-N</li>
+<li>ADF: King </li>
+<li>ADS-B Compliant</li>
+<li>RVSM Approved </li>
+<li>RNP2</li></ul></p>
+
+                    <p><b>Additional Equipment
+:</b> <ul><li>
+Freon air-conditioning</li>
+<li>Lead acid battery</li>
+<li>EROS oxygen masks</li></ul></p>
+
+                   <p><b>Interior Notes:</b> Seven full size passenger seats in the cabin: two forward facing seats at the rear of the cabin, four
+seat club seating mid-cabin and a single rear facing seat at the right front of the cabin. The belted aft lavatory seat offers an additional eighth passenger seat and when operated with a single pilot, the co-pilot seat would provide a total of an incredible nine passenger seats available! <ul><li>Recent interior using the highest quality Cessna factory materials.</li>
+<li>Premium Cessna factory beige leather upholstery.</li>
+<li>Recent Paint.</li>
+<li>Polished light wood grain cabinetry.</li>
+<li>Extended hot/cold refreshment center.</li>
+<li>Private lavatory with solid wooden dividing doors at the rear of the cabin.</li>
+<li>USB ports at all seats.</li></ul></p>
+                   <p><b>Inspection Status:</b> Phase 5 (3yr) inspection scheduled for completion next month in March 2025.
+
+The information contained herein was obtained from the aircraft permanent records and personal observation.  No warranties are made as to Fitness, Merchantability or Accuracy.  Buyers are strongly encouraged to confirm all details to their complete satisfaction prior to purchase.   Aircraft offered subject to prior sale or withdrawal from the market without notice.</p>
+                </div>
+            </div>
+
+            <!-- Add more aircraft items as needed -->
+            <div class="aircraft-item" data-manufacturer="cessna" data-year="2015" data-price="6950000" data-condition="used" data-location="europe">
+                <div class="aircraft-name">2015 CESSNA CITATION CJ4</div>
+                <p class="aircraft-price">USD $6,950,000</p>
+                <div class="carousel">
+                    <img src="https://media.sandhills.com/img.axd?id=9009617967&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=P0JxfpJBn1uEx1nOWOdPgn17Kv0sRz%2frzAkSZDitDAU%3d" alt="Cessna 172 Skyhawk 1" class="active">
+                    <img src="https://media.sandhills.com/img.axd?id=9009617972&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=P0JxfpJBn1vQceoJjxtj8p9LqwLg9GjXCUik85QYiHA%3d" alt="Cessna 172 Skyhawk 2">
+                    <img src="https://media.sandhills.com/img.axd?id=9009617963&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=P0JxfpJBn1ug3A1GE7O7YpQu4CbSQC0X4gSAtoq2lDo%3d" alt="Cessna 172 Skyhawk 3">
+                    <img src="https://media.sandhills.com/img.axd?id=9009617982&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=P0JxfpJBn1uuIjTyGE85rITdDlpVpoRjUHMCBqlFrqY%3d" alt="Cessna 172 Skyhawk 4">
+                    <img src="https://media.sandhills.com/img.axd?id=9009617959&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=P0JxfpJBn1uaXAuQvrvIqZblTVKiD8jfbBrn2MDV92A%3d" alt="Cessna 172 Skyhawk 5">
+                    <button class="carousel-nav prev">&#10094;</button>
+                    <button class="carousel-nav next">&#10095;</button>
+                </div>
+                <div class="aircraft-details">
+                    <p><b> Manufacturer:</b>  CESSNA</p>
+                    <p><b> Year:</b> 2015</p>
+                    <p><b> Model:</b> CITATION CJ4</p>
+                    <p><b> Serial Number:</b> 525C-0200</p>
+                    <p><b> Registration:</b> 2-THCL</p>
+                    <p><b> Aircraft Location:</b> Southampton, England, United Kingdom</p>
+                </div>
+                <button class="retro-button" onclick="toggleDetails('cessna-178-details')">More Details</button>
+                <button class="retro-button" onclick="window.location.href='mailto:seller2@example.com?subject=Inquiry%20about%202001%20CESSNA%20CITATION%20CJ2'">Contact Seller</button>
+                <div id="cessna-178-details" class="additional-details">
+                    <p><b> Description:</b> Textron Aviation is pleased to present this 2015 Citation CJ4 on behalf of the aircraft owner.</p>
+                    <p><b>Total Time:</b> 486</p>
+                    <p><b>Total Landings:</b> 928</p>
+                    <p><b>Engines:</b> Williams International FJ44-4A</p>
+                    <p><b>Engines TBO:</b> 5,000</p>
+                    <p><b>Engine 1 Time (SNEW):</b> 486</p>
+                    <p><b>Engine 2 Time (SNEW):</b> 486</p>
+                    <p><b>Engine 1 Cycles (SNEW):</b> 928</p>
+                    <p><b>Engine 2 Cycles (SNEW):</b> 928</p>
+                    <p><b>Avionics/Radios:</b> <ul><li>Pro Line 21 Integrated Avionics Suite</li>
+<li>Pro Line 21 Radios with dual COM, Dual NAV, Dual Digital Audio Control Panels</li>
+<li>Single Collins DME-4000</li>
+<li>Dual Collins Mode S Diversity Transponders with Enhanced Surveillance with ADS-B Out</li>
+<li>Collins FMS 3000</li>
+<li>Collins GPS 4000 with WAAS</li>
+<li>Collins Multi-Scan RTA-4112 Weather Radar</li>
+<li>L-3 Communications FA2100 Cockpit Voice Recorder</li>
+<li>Collins TSS-4100 (TCAS II)</li>
+<li>Mark VIII Class A TAWS</li>
+<li>Artex C406N 3-Frequency ELT</li>
+<li>Integrated Pulselight System</li>
+<li>Electronic Charts (requires subscription)</li></ul></p>
+
+                    <p><b>Additional Equipment
+:</b> <ul><li>
+Second FMS/GPS/DME</li>
+<li>Data Link with Textual Weather</li>
+<li>FA2100 FDR</li></ul></p>
+
+                   <p><b>Exterior - Year Painted:</b> 2015</p>
+                   <p><b>Interior - Year Interior:</b> 2015</p>
+                   <p><b>Interior Notes:</b> Cabin Seating for 7 Passengers. (Six Cabin Seats and Right-Hand Forward Side-Facing seat) <ul><li>Left-Hand Forward Refreshment Center</li>
+<li>Left-Hand Belted Flushing Toilet (externally serviceable)</li>
+<li>Left-Hand Forward Refreshment Center</li>
+<li>Right-Hand Forward Cabinet with Single Side Facing Seat</li>
+<li>10.6” Monitor in RH Forward Cabinet</li>
+<li>Venue Cabin Management System</li>
+<li>Iridium Axxess II Phone System</li>
+<li>Executive & Slimline Tables</li>
+<li>110 VAC Outlets</li></ul></p>
+                </div>
+            </div>
+
+            <!-- Add more aircraft items as needed -->
+            <div class="aircraft-item" data-manufacturer="beechcraft" data-year="2003" data-price="2075000" data-condition="used" data-location="usa">
+                <div class="aircraft-name">2003 BEECHCRAFT BEECHJET 400A</div>
+                <p class="aircraft-price">USD $2,075,000</p>
+                <div class="carousel">
+                    <img src="https://media.sandhills.com/img.axd?id=9037133870&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=5spEBCE6VOdxb8ylxD0R9TIDP6vGQp8Q7tANoKaypL0%3d" alt="Cessna 174 Skyhawk 1" class="active">
+                    <img src="https://media.sandhills.com/img.axd?id=9037133873&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=5spEBCE6VOeO3Y%2bpPD8OnBMvFQ2M2w7Jrhpev3l5Po0%3d" alt="Cessna 174 Skyhawk 2">
+                    <img src="https://media.sandhills.com/img.axd?id=9037133876&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=5spEBCE6VOfEaOtSNfZgnd25wf%2fE6tQlxoMBzlxdKtw%3d" alt="Cessna 174 Skyhawk 3">
+                    <img src="https://media.sandhills.com/img.axd?id=9037133878&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=5spEBCE6VOeczGgnfxluiB%2bLkr4ySmnEU%2bR7dJzQlVM%3d" alt="Cessna 174 Skyhawk 4">
+                    <img src="https://media.sandhills.com/img.axd?id=9037133879&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=5spEBCE6VOeZblWPA9V5LqxpkBA%2bDf3Ae%2bMFVf3lxH0%3d" alt="Cessna 174 Skyhawk 5">
+                    <img src="https://media.sandhills.com/img.axd?id=9037133882&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=5spEBCE6VOdagL5SOY8ZSH8X9RIG8hW6foqi3Q%2fDJ3E%3d" alt="Cessna 174 Skyhawk 6">
+                    <img src="https://media.sandhills.com/img.axd?id=9037133888&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=5spEBCE6VOet0Z8fewEF8ccIo6UU8pCJ44yWT73Cf9E%3d" alt="Cessna 174 Skyhawk 7">
+                    <button class="carousel-nav prev">&#10094;</button>
+                    <button class="carousel-nav next">&#10095;</button>
+                </div>
+                <div class="aircraft-details">
+                    <p><b> Manufacturer:</b>  BEECHCRAFT</p>
+                    <p><b> Year:</b> 2003</p>
+                    <p><b> Model:</b> BEECHJET 400A</p>
+                    <p><b> Serial Number:</b> RK-349</p>
+                    <p><b> Registration:</b> N349FJ</p>
+                    <p><b> Aircraft Location:</b> Amarillo, Texas</p>
+                </div>
+                <button class="retro-button" onclick="toggleDetails('cessna-174-details')">More Details</button>
+                <button class="retro-button" onclick="window.location.href='mailto:travis@havenaero.com?subject=Inquiry%20about%202003%20BEECHCRAFT%20BEECHJET%20400A'">Contact Seller</button>
+                <div id="cessna-174-details" class="additional-details">
+                    <p><b> Description:</b> FAA FAR Part 135 current aircraft!</p>
+                    <p><b>Total Time:</b> 4,866</p>
+                    <p><b>Total Landings:</b> 3,839</p>
+                    <p><b>Engines:</b> PRATT & WHITNEY JT15D-5</p>
+                    <p><b>Engines TBO:</b> 3,500</p>
+                    <p><b>Engine 1 Time (SNEW):</b> 4,765</p>
+                    <p><b>Engine 2 Time (SNEW):</b> 4,765</p>
+                    <p><b>Engine 1 Cycles (SNEW):</b> 3,757</p>
+                    <p><b>Engine 2 Cycles (SNEW):</b> 3,757</p>
+                    <p><b>Engine 1 Time (SOH):</b> 1,311</p>
+                    <p><b>Engine 2 Time (SOH):</b> 1,311</p>
+                    <p><b>Engine 1 Cycles (SOH):</b> 1,119</p>
+                    <p><b>Engine 2 Cycles (SOH):</b> 1,119</p>
+                    <p><b>Avionics/Radios:</b> <ul><li>Flight Management System 1: Collins AMS5000</li>
+<li>Flight Management System 2: Collins AMS5000</li>
+<li>VOR X2: Collins VIR432</li>
+<li>DME X2: Collins DME442</li>
+<li>GPS System: Collins 4000S</li>
+<li>Transponders X2: Collins TDR-94D</li>
+<li>Autopilot: Collins APS-4000</li>
+<li>Cockpit Voice Recorder: L-3 FA2100</li>
+<li>TAWS: Honeywell 965-0976-040-208-208</li>
+<li>Radar: Collins RTA-854</li>
+<li>TCAS II: Collins TTR-4000</li>
+<li>WiFi: GoGo ATG5000</li>
+<li>Flite Phone: AirCell ST3100</li></ul></p>
+
+                   <p><b>Inspection Status:</b> <ul><li>Aircraft status tracked via FlightDocs</li>
+<li>Aircraft currently operated under the IFA (increased flight activity) program.</li>
+<li>IFA-A Inspection next due: 10/31/2025 or ATT 5241.8</li>
+<li>IFA-B Inspections next due: ATT 5466.4</li>
+<li>IFA-C Inspection next due: ATT 5114.4</li>
+<li>IFA-D Inspection next due: ATT 6400</li>
+<li>Several lubrication items, engine minors and other small inspections showing on due list scheduled to be completed prior to 1/1/2025.</li>
+<li>#2 engine starter generator scheduled for replacement prior to 1/1/2025.</li></ul></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
