@@ -5,10 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Aircraft Avenue</title>
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon et icônes -->
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
+  
 </head>
+
 <body>
     <div class="window">
-        <div class="title-bar">Aircraft Avenue</div>
+        <div class="title-bar">
+            <img src="logo.png" alt="logo aircraft avenue" class="logo">
+        </div>
 
         <div class="menu-bar">
             <div class="menu-item"><a href="index.html"><u>Home</u></a></div>
@@ -33,6 +43,7 @@
                             <label><input type="checkbox" value="gulfstream"> Gulfstream</label>
                             <label><input type="checkbox" value="bombardier"> Bombardier</label>
                             <label><input type="checkbox" value="dassault"> Dassault</label>
+                            <label><input type="checkbox" value="pilatus"> Pilatus</label>
                             <label><input type="checkbox" value="learjet"> Learjet</label>
                             <label><input type="checkbox" value="embraer"> Embraer</label>
                             <label><input type="checkbox" value="hawker"> Hawker</label>
@@ -93,6 +104,8 @@
             <div class="aircraft-item" data-manufacturer="beechcraft" data-year="2010" data-price="2400000" data-condition="used" data-location="usa">
                 <div class="aircraft-name">2010 BEECHCRAFT PREMIER IA</div>
                 <p class="aircraft-price">USD $2,400,000</p>
+                    <button class="retro-button share-button" onclick="generatePDF('aircraft-item-1')">Share</button>
+
                 <div class="carousel">
                     <img src="https://media.sandhills.com/img.axd?id=9040622028&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=WQZB8cFLrUwkefTYPcFWHpFIKEKoHFrd5pYyZ5ljqXc%3d" alt="Cessna 172 Skyhawk 1" class="active">
                     <img src="https://media.sandhills.com/img.axd?id=9040622006&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=WQZB8cFLrUxICk0KD4lprjbt%2bnuSSCoMJ5v36j%2bvI%2fc%3d" alt="Cessna 172 Skyhawk 2">
@@ -246,6 +259,168 @@ The information contained herein was obtained from the aircraft permanent record
                 </div>
             </div>
 
+
+
+            <div class="aircraft-item" data-manufacturer="pilatus" data-year="2014" data-price="4950000" data-condition="used" data-location="usa">
+                <div class="aircraft-name">2014 PILATUS PC-12 NG</div>
+                <p class="aircraft-price">USD $4,950,000</p>
+                <div class="carousel">
+                    <img src="https://media.sandhills.com/img.axd?id=9022926063&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=34sbXmgzLwC0zeOOGYansyBiUKqf3AJn2L%2buytnf4ws%3d" alt="pilatus-1733 1" class="active">
+                    <img src="https://media.sandhills.com/img.axd?id=9022926217&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=AHs3Ayq74TzloHLE2QBQQqVimNAuW8gv97HC7GGNfDU%3d" alt="pilatus-1733 2">
+                    <img src="https://media.sandhills.com/img.axd?id=9022926477&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=yzTh7skjZ5fHPjkMVralI4YmMuy7k8EviTAArzjYaEo%3d" alt="pilatus-1733 3">
+                    <img src="https://media.sandhills.com/img.axd?id=9022926187&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=RBJoqubxeJxMrs6UTx0UN%2f57MI9Fzj7Sh4%2f0JycR4p4%3d" alt="pilatus-1733 4">
+                    <img src="https://media.sandhills.com/img.axd?id=9022926512&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=eXGFH9yiiye1GggQClO8rsysVxoNfBo5uXG3yMW4oiA%3d" alt="pilatus-1733 5">
+                    <img src="https://media.sandhills.com/img.axd?id=9022926483&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=yzTh7skjZ5f0D7ydhz7YmOVgOgvyQxFZ9qDQ%2b9fujsc%3d" alt="pilatus-1733 6">
+                    <img src="https://media.sandhills.com/img.axd?id=9022926494&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=yzTh7skjZ5fbXUHOW3CY7JYEofJupFFPBygDEiGEmVc%3d" alt="pilatus-1733 7">
+
+
+                    <button class="carousel-nav prev">&#10094;</button>
+                    <button class="carousel-nav next">&#10095;</button>
+                </div>
+                <div class="aircraft-details">
+                    <p><b> Manufacturer:</b> PILATUS</p>
+                    <p><b> Year:</b> 2014</p>
+                    <p><b> Model:</b> PC-12 NG</p>
+                    <p><b> Serial Number:</b> 1496</p>
+                    <p><b> Registration:</b> N673BA</p>
+                    <p><b> Aircraft Location:</b> Gypsum, Colorado, USA</p>
+                </div>
+                <button class="retro-button" onclick="toggleDetails('pilatus-1733-details')">More Details</button>
+                <button class="retro-button" onclick="window.location.href='https://primeaircraft.com/contact/'">Contact Seller</button>
+                <div id="pilatus-1733-details" class="additional-details">
+                    <p><b> Description:</b> Beautiful PC12NG with freshly overhauled engine just installed first week in February 2025 based in Eagle, Colorado.  Fresh annual inspection, prop overhaul and 10-year wing de-mate scheduled for March 14 at Cutter Aviation in Broomfield, CO.  No damage history and complete logs since new.  Service Center maintenance.  Always hangared.  Professionally flown. Great aircraft with beautiful paint.   See "Service Logs" section below for copies of logbooks and maintenance status.</p>
+                    <p><b>Total Time:</b> 3,809</p>
+                    <p><b>Total Landings:</b> 1,700</p>
+                    <p><b>Engines:</b> PRATT & WHITNEY PT6A-67P</p>
+                    <p><b>Engines TBO:</b> 3,600</p>
+                    <p><b>Engine Time (SFOH):</b> 0</p>
+                    <p><b>Engine Notes:</b> Aircraft currently has loaner engine at a rate of $200/hour.  Overhauled engine is scheduled to be installed in January of 2025.  Overhaul being accomplished by Standard Aero, authorized factory service center and will include the replacement of the second stage PT blades ($28,000 option).</p>
+                    <p><b>Prop Manufacturer:</b> HARTZELL</p>
+                    <p><b>Prop Model:</b> HC-E5A-3A</p>
+                    <p><b>Prop Time:</b> 3,212 (SNEW)</p>
+                    <p><b>Prop Notes:</b> Aircraft on Part 91, so overhaul is not required.  Prop has 766 hours left till overhaul based on time. Past calendar due date of 1/15/2024 (72 month). 5 Blade propeller installed January 2018.</p>
+                    <p><b>Avionics/Radios:</b>
+                        <ul>
+                            <li>Honeywell Primus Apex Suite</li>
+                            <li>Cursor Control Device</li>
+                            <li>Wireless Connected Flight Deck</li>
+                            <li>Pilot & Co-Pilot PFD With Pilot & Co-Pilot Audio/Marker Panel</li>
+                            <li>Honeywell KGS 200 GPS WAAS/LPV Function</li>
+                            <li>WX500 Stormscope</li>
+                            <li>Dual GPS</li>
+                            <li>Transponder With ADS-B In & Out</li>
+                            <li>Integrated Electronic Standby Instrument System (ESIS)</li>
+                            <li>TAWS Class B</li>
+                            <li>TCAS I</li>
+                            <li>RSVM Capability</li>
+                            <li>Synthetic Vision</li>
+                            <li>Honeywell Chartlink</li>
+                            <li>Weather Radar RDR 2000</li>
+                            <li>406 ELT</li>
+                            <li>EGPWS</li>
+                        </ul>
+                        </p>
+
+                        <p><b>Additional Equipment:</b>
+                        <ul>
+                            <li>Air Conditioning System</li>
+                            <li>Iridium Satcom Antenna & Port</li>
+                            <li>Hartzell 5-Blade Propeller</li>
+                            <li>Propeller Feather Inhibit System</li>
+                            <li>Advent EABS Anti-Skid Brakes</li>
+                            <li>Airtext (based off Iridium network)</li>
+                            <li>USB Charging Ports and outlets left and right side cabin wall</li>
+                            <li>EMTEQ eConnect cabin Entertainment System w/ Sirius XM Weather and Radio</li>
+                        </ul>
+                        </p>
+                        
+                    <p><b>Interior Notes:</b> Paint is in excellent condition and looks new.  Boots also look brand new and were installed in 2020.
+                        Phantom Gray, Cumulus Gray and Ocean Blue Stripes.
+                        Ceramic coated regularly.</p>
+                    <p><b>Inspection Status:</b>
+                        <ul>
+                            <li>Annual Inspection (300 FH, 300 FH/12 Month, 600 FH/12 Month, 1200 FH/12 Month) due 164.7 hours or 7.5 months.
+                                Wing to Fuselage attachments inspection currently scheduled at Cutter in October 2024. 
+                                New increased thickness de-ice boots 4/2020.
+                                New propeller de-ice boots 5/2023.
+                                Freshly overhauled engine to be installed January 2025.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+
+
+            <!-- Add more aircraft items as needed -->
+<div class="aircraft-item" data-manufacturer="gulfstream" data-year="2001" data-price="3950000" data-condition="used" data-location="canada">
+    <div class="aircraft-name">2001 GULFSTREAM G200</div>
+    <p class="aircraft-price">USD $3,950,000</p>
+    <div class="carousel">
+        <img src="https://media.sandhills.com/img.axd?id=8033191988&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=YS1B7iUC7%2fdkUgU2SOHsJwjVh3Bhoan2FNak0IH071Q%3d" alt="cessna-1733 1" class="active">
+        <img src="https://media.sandhills.com/img.axd?id=8033191990&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=YS1B7iUC7%2fdKmQKQuCkPALpe9tp67Yg19PWkN%2f4ZjZ8%3d" alt="cessna-1733 2">
+        <img src="https://media.sandhills.com/img.axd?id=8033191986&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=YS1B7iUC7%2fe9WT%2fpkBwa3Fwl%2fet9g9uZcmQ2SXd3wHA%3d" alt="cessna-1733 3">
+        <img src="https://media.sandhills.com/img.axd?id=8033191975&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=YS1B7iUC7%2fc79hrqtkc0hmf%2f5JkcrC88cTm1GkBoJs8%3d" alt="cessna-1733 4">
+        <img src="https://media.sandhills.com/img.axd?id=8033191981&wid=4326165471&rwl=False&p=&ext=&w=0&h=0&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=YS1B7iUC7%2fdoiL%2fWyUHe2vgXcHkF3aLreUiuiVaS8gs%3d" alt="cessna-1733 5">
+        <button class="carousel-nav prev">&#10094;</button>
+        <button class="carousel-nav next">&#10095;</button>
+    </div>
+    <div class="aircraft-details">
+        <p><b> Manufacturer:</b> GULFSTREAM</p>
+        <p><b> Year:</b> 2001</p>
+        <p><b> Model:</b> G200</p>
+        <p><b> Serial Number:</b> 048</p>
+        <p><b> Registration:</b> C-GRST</p>
+        <p><b> Aircraft Location:</b> London, Ontario, Canada</p>
+    </div>
+    <button class="retro-button" onclick="toggleDetails('cessna-1733-details')">More Details</button>
+    <button class="retro-button" onclick="window.location.href='https://www.aerosmithpenny.com/contact.htm'">Contact Seller</button>
+    <div id="cessna-1733-details" class="additional-details">
+        <p><b> Description:</b> Fresh 5000 Cycle Inspection West Star</p>
+        <p><b>Total Time:</b> 6,558</p>
+        <p><b>Total Landings:</b> 5,013</p>
+        <p><b>Engines:</b> PRATT & WHITNEY PW306A</p>
+        <p><b>Engines TBO:</b> 6,000</p>
+        <p><b>Engine 1 Time (SNEW):</b> 6,092</p>
+        <p><b>Engine 2 Time (SNEW):</b> 6,428</p>
+        <p><b>Engine 1 Cycles (SNEW):</b> 4,679</p>
+        <p><b>Engine 2 Cycles (SNEW):</b> 4,920</p>
+        <p><b>Engine Maintenance Program:</b> ESP Gold</p>
+        <p><b>APU:</b> Garrett GTCP 36-150(IAI) -MSP</p>
+        <p><b>APU Time:</b> 4,085</p>
+        <p><b>APU Maintenance Program:</b> MSP</p>
+        <p><b>Avionics/Radios:</b>
+            <ul>
+                <li>Proline 4</li>
+                <li>ADF: Collins ADF-462</li>
+                <li>AHRS: Dual Collins AHS-85E</li>
+                <li>Autopilot: Dual Collins FCC-4005</li>
+                <li>Comm Radios: Dual Collins VHF-422D W/8.33 KHZ</li>
+                <li>Cockpit Voice Recorder: Universal CVR-30B</li>
+                <li>DME: Dual Collins DME-442</li>
+                <li>EFIS: Collins EFD-4077 5-Tube</li>
+                <li>FMS: Dual Universal UNS-1C+</li>
+                <li>GPS System: Garmin</li>
+                <li>HI Frequency: Dual Honeywell HF-950 W/Selcal</li>
+                <li>Navigation Radios: Dual Collins VIR-432 W/FM Immunity</li>
+                <li>Radar Altimeter: Collins ALT-4000</li>
+                <li>Satcom: Thrane & Thrane Aviator 300</li>
+                <li>TAWS: Honeywell Mark V EGPWS</li>
+                <li>TCAS II: Collins TCAS-94 W/Change 7.1</li>
+                <li>Transponders X2: Dual Collins TDR-94D W/ Flight ID</li>
+                <li>Weather Radar: Collins WXR-850</li>
+                <li>Flight Data Recorder: Removed - Loose Equipment</li>
+            </ul>
+        </p>
+        <p><b>Interior Notes:</b> 9 Passenger, LIGHT BEIGE LEATHER SEATING, FOUR FORWARD SINGLE CLUB SEATS, DUAL AFT SINGLE SEATS OPPOSITE 3-PLACE BERTHABLE DIVAN, JUMPSEAT, RIGHT SIDE FORWARD GALLEY, MICROWAVE & COFFEEMAKER QUARTER FIGURED ETIMOE WOOD, LED LIGHTING, AIRCELL GOGO BIZ W/ ATG-5000 HIGH-SPEED INTERNET</p>
+        <p><b>Inspection Status:</b>
+            <ul>
+                <li>MSG-3 192 - C/W 2018</li>
+                <li>Aircraft currently operated under the IFA (increased flight activity) program.</li>
+            </ul>
+        </p>
+    </div>
+</div>
+
             <!-- Add more aircraft items as needed -->
             <div class="aircraft-item" data-manufacturer="cessna" data-year="2015" data-price="6950000" data-condition="used" data-location="europe">
                 <div class="aircraft-name">2015 CESSNA CITATION CJ4</div>
@@ -336,9 +511,9 @@ Second FMS/GPS/DME</li>
                     <p><b> Registration:</b> N349FJ</p>
                     <p><b> Aircraft Location:</b> Amarillo, Texas</p>
                 </div>
-                <button class="retro-button" onclick="toggleDetails('cessna-174-details')">More Details</button>
+                <button class="retro-button" onclick="toggleDetails('cessna-171-details')">More Details</button>
                 <button class="retro-button" onclick="window.location.href='mailto:travis@havenaero.com?subject=Inquiry%20about%202003%20BEECHCRAFT%20BEECHJET%20400A'">Contact Seller</button>
-                <div id="cessna-174-details" class="additional-details">
+                <div id="cessna-171-details" class="additional-details">
                     <p><b> Description:</b> FAA FAR Part 135 current aircraft!</p>
                     <p><b>Total Time:</b> 4,866</p>
                     <p><b>Total Landings:</b> 3,839</p>
